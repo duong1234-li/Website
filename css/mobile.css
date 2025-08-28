@@ -1,0 +1,203 @@
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 21px;
+	letter-spacing: 0px;
+	background-color: #000;
+	padding: 0 13px 11px 13px;
+	overflow: auto;
+}
+
+.col1 {
+	margin-left: 1px;
+	width: 100%;
+	max-width: 375px;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Fanwood Text';
+}
+
+.col-top {
+	display: flex;
+	flex-direction: column;
+}
+
+.title-ocean {
+	min-height: 103px;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	color: #f00;
+	font-size: 91.46px;
+	line-height: 1.123;
+}
+
+.subtitle-a-college-student {
+	min-height: 73px;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	color: #fff;
+	font-size: 54.06px;
+	line-height: 1.345;
+}
+
+.group1 {
+	position: relative;
+	margin-right: 18px;
+	height: 401px;
+	flex-shrink: 0;
+}
+
+._024c {
+	position: absolute; top: 5px; left: 50%; 
+	translate: -50% 0;
+	width: 100%;
+	max-width: 357px;
+}
+
+.text-age-19-i-m {
+	position: absolute; top: 0; left: 59px; right: 59px; 
+	text-shadow: -1px -1px 0px #000,1px -1px 0px #000,1px 1px 0px #000,-1px 1px 0px #000;
+	height: 377px;
+	text-align: left;
+}
+
+.group2 {
+	position: relative;
+	margin-left: 9px; margin-top: 1px;
+	width: 100%; height: 322px;
+	max-width: 382px;
+	flex-shrink: 0;
+}
+
+.group3 {
+	position: absolute; top: 15px; left: 3px; 
+	width: 179px; height: 147px;
+}
+
+.subtitle-like-sunburn {
+	position: absolute; top: 50%; left: 0; right: 14px; 
+	translate: 0 -50%;
+	margin-top: 11px;
+	height: 125px;
+	color: #dabbbb;
+	text-align: left;
+}
+
+.ft-aawqea-yamr2qv {
+	position: absolute; top: 50%; left: 50%; 
+	translate: -50% -50%;
+	transform-origin: 50% 50%;
+	margin-left: 40px; margin-top: -19px;
+	width: 72px;
+}
+
+.col2 {
+	position: absolute; top: 0; left: 202px; 
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	padding-top: 8px;
+}
+
+.creepy-eye-png-by {
+	transform-origin: 50% 50%;
+	margin-right: 4px;
+	width: 57px;
+	flex-shrink: 0;
+	align-self: end;
+}
+
+.subtitle-dislike {
+	height: 113px;
+	flex-shrink: 0;
+	color: #f00;
+	text-align: left;
+}
+
+.group4 {
+	position: absolute; top: 158px; left: 0; 
+	width: 167px; height: 164px;
+}
+
+.subtitle-interact {
+	position: absolute; top: 50%; left: 0; right: 31px; 
+	translate: 0 -50%;
+	margin-top: 33px;
+	height: 98px;
+	color: #d5b0b0;
+	text-align: left;
+}
+
+.pngtree-simple-pink {
+	position: absolute; top: 50%; right: 0; 
+	translate: 0 -50%;
+	margin-top: -39px;
+	width: 85px;
+}
+
+.group5 {
+	position: absolute; top: 114px; left: 200px; 
+	width: 182px; height: 154px;
+}
+
+.subtitle-dni-just-stay {
+	position: absolute; top: 50%; left: 0; right: 38px; 
+	translate: 0 -50%;
+	margin-top: 24px;
+	height: 88px;
+	color: #f00;
+	text-align: left;
+}
+
+.bloody-knife-png {
+	position: absolute; top: 50%; left: 50%; 
+	translate: -50% -50%;
+	transform-origin: 50% 50%;
+	margin-left: 14px;
+	width: 112px;
+}
+
+.col-bottom {
+	width: 157px;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	color: #ff1515;
+	font-size: 24px;
+	font-family: 'Kaisei Decol';
+	line-height: 3.029;
+}
+
+.subtitle-find-me-here {
+	min-height: 43px;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.row-bottom {
+	margin-left: -1px;
+	display: flex;
+	align-items: flex-end;
+	gap: 12px;
+	align-self: center;
+}
+
+.building-blocks-standard-icon {
+	height: 40px;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.building1 {
+	margin-bottom: -1px;
+	width: 43px;
+}
+
+.building2 {
+	width: 41px;
+}
