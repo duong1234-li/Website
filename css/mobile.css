@@ -223,3 +223,15 @@ body {
 		margin-top: unset !important;
 	}
 }
+
+/* Make all divs centered horizontally by default
+   NOTE: this is a broad rule and may override intentional margins
+   on certain elements. If you want to scope this to only top-level
+   layout containers, tell me and I'll narrow the selector. */
+/* Scoped centering for main layout containers — safer than centering all divs */
+.col-top1,
+.row,
+.col-bottom {
+	margin-left: auto;
+	margin-right: auto;
+}
