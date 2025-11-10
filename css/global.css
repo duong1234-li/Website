@@ -23,6 +23,7 @@ html {
 	font-style: normal;
 	font-weight: 600;
 	line-height: 1.5;
+	letter-spacing: 0px;
 }
 
 .body-text {
@@ -32,4 +33,39 @@ html {
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1.588;
+	letter-spacing: 0px;
+}
+
+/* Make the bottom icon anchors fully clickable and accessible */
+.row-bottom {
+	gap: 12px; /* spacing between links */
+}
+
+.btn-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px; /* expands the clickable area */
+	border-radius: 8px;
+	text-decoration: none;
+	color: inherit;
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure the embedded object/svg doesn't steal pointer events so the anchor receives clicks */
+.btn-link object,
+.btn-link svg {
+	pointer-events: none;
+	display: block;
+}
+
+.btn-link:hover {
+	transform: translateY(-2px);
+	transition: transform 120ms ease;
+}
+
+.btn-link:focus-visible {
+	outline: 3px solid #ffffffaa;
+	outline-offset: 3px;
+	box-shadow: 0 0 0 3px rgba(255,255,255,0.08) inset;
 }
