@@ -57,7 +57,7 @@ body {
 }
 
 .row {
-	margin-top: 40px;
+	margin: 40px auto 0; /* keep top spacing, center horizontally */
 	display: flex;
 	align-items: flex-start;
 	gap: 32px;
