@@ -160,6 +160,7 @@ body {
 }
 
 .col-bottom {
+	margin-top: 40px; /* Add space above this section */
 	margin-left: -1px;
 	width: 190px;
 	display: flex;
