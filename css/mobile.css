@@ -214,7 +214,7 @@ body {
 @container body (width < 474px) {
 	.row {
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center; /* Center the columns on mobile */
 		gap: 35px;
 	}
 	.col-bottom {
