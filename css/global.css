@@ -69,3 +69,79 @@ html {
 	outline-offset: 3px;
 	box-shadow: 0 0 0 3px rgba(255,255,255,0.08) inset;
 }
+
+/* Snow Toggle Button */
+.snow-toggle {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 100;
+	padding: 10px 16px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	border-radius: 8px;
+	font-size: 14px;
+	font-family: 'Epilogue', sans-serif;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.snow-toggle:hover {
+	background: rgba(0, 0, 0, 0.8);
+	border-color: rgba(255, 255, 255, 0.6);
+	transform: translateY(-2px);
+}
+
+.snow-toggle:active {
+	transform: translateY(0);
+}
+
+.snow-toggle.disabled {
+	background: rgba(100, 100, 100, 0.6);
+}
+
+/* Rain Effect Styles */
+body {
+	position: relative;
+	overflow-x: hidden;
+}
+
+.rain-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 1;
+	background: transparent;
+}
+
+.raindrop {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6));
+	opacity: 0.8;
+	box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fall {
+	0% {
+		opacity: 0.8;
+	}
+	90% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(100vh);
+	}
+}
+
+.raindrop.falling {
+	animation: fall linear forwards;
+}

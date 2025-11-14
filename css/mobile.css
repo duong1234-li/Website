@@ -235,3 +235,23 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/* Snow Toggle Button - Mobile Responsive */
+@media (max-width: 768px) {
+	.snow-toggle {
+		top: 12px;
+		right: 12px;
+		padding: 8px 12px;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.snow-toggle {
+		top: 10px;
+		right: 10px;
+		padding: 6px 10px;
+		font-size: 11px;
+		border-width: 1px;
+	}
+}
