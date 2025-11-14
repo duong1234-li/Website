@@ -223,6 +223,13 @@ body {
 	.row > * {
 		margin-top: unset !important;
 	}
+	/* Center the content inside the columns on mobile */
+	.col-left, .col-right {
+		align-items: center;
+	}
+	.group3 {
+		align-self: center;
+	}
 }
 
 /* Make all divs centered horizontally by default
