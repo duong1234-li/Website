@@ -24,7 +24,7 @@ function createRainElement() {
 	rainElement.style.left = xPos + 'px';
 	
 	// Random animation duration between 8s and 12s
-	const duration = Math.random() * 4 + 8;
+	const duration = Math.random() * 2 + 4;
 	rainElement.style.animationDuration = duration + 's';
 	
 	// Start from just above the viewport
