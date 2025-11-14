@@ -1,12 +1,13 @@
 const rainContainer = document.querySelector('.rain-container');
 const rainToggle = document.getElementById('rain-toggle');
 
-// Ensure the rain container is in the background
-rainContainer.style.position = 'fixed';
-rainContainer.style.top = '0';
-rainContainer.style.left = '0';
 if (!rainContainer) {
 	console.error('Rain container not found!');
+} else {
+	// Ensure the rain container is in the background
+	rainContainer.style.position = 'fixed';
+	rainContainer.style.top = '0';
+	rainContainer.style.left = '0';
 }
 
 let rainEnabled = true;
@@ -23,13 +24,8 @@ function createRainElement() {
 	const xPos = Math.random() * window.innerWidth;
 	rainElement.style.left = xPos + 'px';
 	
-<<<<<<< HEAD
-	// Random animation duration between 0.4s and 0.8s for a faster fall
+	// Random animation duration between 1.5s and 3.0s for a faster fall
 	const duration = Math.random() * 1.5 + 1.5;
-=======
-	// Random animation duration between 8s and 12s
-	const duration = Math.random() * 1 + 2;
->>>>>>> b18b3d20a0463017085f1063fcfac963dc7233de
 	rainElement.style.animationDuration = duration + 's';
 	
 	// Start from just above the viewport
@@ -65,10 +61,17 @@ function stopRain() {
 		rainInterval = null;
 	}
 	// Clear existing elements
-	rainContainer.innerHTML = '';
+	while (rainContainer.firstChild) {
+		rainContainer.removeChild(rainContainer.firstChild);
+	}
 }
 
 // Toggle rain on/off
+if (!rainToggle) {
+	console.error('Rain toggle button not found!');
+	// If the toggle doesn't exist, we can't add a listener to it.
+	// The rain will start by default and cannot be stopped.
+} else {
 rainToggle.addEventListener('click', () => {
 	rainEnabled = !rainEnabled;
 	
@@ -82,6 +85,19 @@ rainToggle.addEventListener('click', () => {
 		stopRain();
 	}
 });
+}
 
 // Start the rain effect immediately
-startRain();
+if (rainContainer) {
+	startRain();
+}
+
+// Handle window resize to ensure raindrops fall the correct distance
+window.addEventListener('resize', () => {
+	if (rainEnabled && rainContainer) {
+		// Stop and clear existing rain
+		stopRain();
+		// Restart with new window dimensions
+		startRain();
+	}
+});
