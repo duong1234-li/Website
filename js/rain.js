@@ -23,8 +23,8 @@ function createRainElement() {
 	const xPos = Math.random() * window.innerWidth;
 	rainElement.style.left = xPos + 'px';
 	
-	// Random animation duration between 8s and 12s
-	const duration = Math.random() * 4 + 8;
+	// Random animation duration between 0.4s and 0.8s for a faster fall
+	const duration = Math.random() * 1.5 + 1.5;
 	rainElement.style.animationDuration = duration + 's';
 	
 	// Start from just above the viewport
@@ -49,8 +49,8 @@ function createRainElement() {
 
 // Create rain elements continuously
 function startRain() {
-	// Keep creating new rain elements
-	rainInterval = setInterval(createRainElement, 200);
+	// Create new rain elements more frequently for a heavier downpour
+	rainInterval = setInterval(createRainElement, 50);
 }
 
 // Stop creating rain

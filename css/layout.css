@@ -9,7 +9,3 @@
   z-index: 1;
 }
 
-/* Adds space above the bottom section */
-.col-bottom {
-  margin-top: 5rem; /* You can adjust this value */
-}
