@@ -1,82 +1,82 @@
 const rainContainer = document.querySelector('.rain-container');
-const snowToggle = document.getElementById('snow-toggle');
+const rainToggle = document.getElementById('rain-toggle');
 
+// Ensure the rain container is in the background
+rainContainer.style.position = 'fixed';
+rainContainer.style.top = '0';
+rainContainer.style.left = '0';
 if (!rainContainer) {
 	console.error('Rain container not found!');
 }
 
-let snowEnabled = true;
-let snowInterval = null;
+let rainEnabled = true;
+let rainInterval = null;
 
-// Function to create a single snow element
-function createSnowElement() {
-	if (!snowEnabled) return;
+// Function to create a single rain element
+function createRainElement() {
+	if (!rainEnabled) return;
 	
-	const snowElement = document.createElement('div');
-	snowElement.style.position = 'absolute'; // Position element freely
-
-	snowElement.innerHTML = '&#10022;'; // A star character
-	snowElement.style.fontSize = `${Math.random() * 15 + 10}px`; // Random size
-	snowElement.style.color = 'lightcoral';
+	const rainElement = document.createElement('div');
+	rainElement.classList.add('raindrop'); // Use the CSS class for styling
 	
 	// Random horizontal position
 	const xPos = Math.random() * window.innerWidth;
-	snowElement.style.left = xPos + 'px';
+	rainElement.style.left = xPos + 'px';
 	
 	// Random animation duration between 8s and 12s
 	const duration = Math.random() * 4 + 8;
-	snowElement.style.animationDuration = duration + 's';
+	rainElement.style.animationDuration = duration + 's';
 	
 	// Start from just above the viewport
-	snowElement.style.top = '-20px';
+	rainElement.style.top = '-20px';
 	
-	rainContainer.appendChild(snowElement);
+	rainContainer.appendChild(rainElement);
 	
-	// Animate to fall left
-	snowElement.animate([
+	// Animate to fall straight down
+	rainElement.animate([
 		{ transform: 'translate(0, 0)' },
-		{ transform: `translate(-${window.innerWidth * 0.5}px, ${window.innerHeight + 50}px)` }
+		{ transform: `translate(0, ${window.innerHeight + 50}px)` }
 	], {
 		duration: duration * 1000,
 		easing: 'linear',
 	});
 	
-	// Remove breeze element after animation completes
+	// Remove element after animation completes
 	setTimeout(() => {
-		snowElement.remove();
+		rainElement.remove();
 	}, duration * 1000);
 }
 
-// Create snow elements continuously
-function startSnow() {
-	// Keep creating new snow elements
-	snowInterval = setInterval(createSnowElement, 100);
+// Create rain elements continuously
+function startRain() {
+	// Keep creating new rain elements
+	rainInterval = setInterval(createRainElement, 200);
 }
 
-// Stop creating snow
-function stopSnow() {
-	if (snowInterval) {
-		clearInterval(snowInterval);
-		snowInterval = null;
+// Stop creating rain
+function stopRain() {
+	if (rainInterval) {
+		clearInterval(rainInterval);
+		rainInterval = null;
 	}
 	// Clear existing elements
 	rainContainer.innerHTML = '';
 }
 
-// Toggle snow on/off
-snowToggle.addEventListener('click', () => {
-	snowEnabled = !snowEnabled;
+// Toggle rain on/off
+rainToggle.addEventListener('click', () => {
+	rainEnabled = !rainEnabled;
 	
-	if (snowEnabled) {
-		snowToggle.textContent = '🌨️ Disable Snow';
-		snowToggle.classList.remove('disabled');
-		startSnow();
+	if (rainEnabled) {
+		rainToggle.textContent = 'Disable Rain';
+		rainToggle.classList.remove('disabled');
+		startRain();
 	} else {
-		snowToggle.textContent = '❌ Enable Snow';
-		snowToggle.classList.add('disabled');
-		stopSnow();
+		rainToggle.textContent = 'Enable Rain';
+		rainToggle.classList.add('disabled');
+		stopRain();
 	}
 });
 
-// Start the snow effect immediately
-startSnow();
+// Start the rain effect immediately
+startRain();

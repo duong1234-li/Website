@@ -1,0 +1,10 @@
+/* Wraps the main content to control stacking order */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensures the snow container is behind the content */
+.rain-container {
+  z-index: 1;
+}

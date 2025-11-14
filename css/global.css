@@ -70,8 +70,8 @@ html {
 	box-shadow: 0 0 0 3px rgba(255,255,255,0.08) inset;
 }
 
-/* Snow Toggle Button */
-.snow-toggle {
+/* Rain Toggle Button */
+.rain-toggle {
 	position: fixed;
 	top: 20px;
 	right: 20px;
@@ -87,17 +87,17 @@ html {
 	transition: all 0.3s ease;
 }
 
-.snow-toggle:hover {
+.rain-toggle:hover {
 	background: rgba(0, 0, 0, 0.8);
 	border-color: rgba(255, 255, 255, 0.6);
 	transform: translateY(-2px);
 }
 
-.snow-toggle:active {
+.rain-toggle:active {
 	transform: translateY(0);
 }
 
-.snow-toggle.disabled {
+.rain-toggle.disabled {
 	background: rgba(100, 100, 100, 0.6);
 }
 
@@ -121,12 +121,11 @@ body {
 
 .raindrop {
 	position: absolute;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.6));
+	width: 2px;
+	height: 15px;
+	border-radius: 1px;
+	background: rgba(255, 181, 181, 0.6);
 	opacity: 0.8;
-	box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
 }
 
 @keyframes fall {

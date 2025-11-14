@@ -236,9 +236,9 @@ body {
 	margin-right: auto;
 }
 
-/* Snow Toggle Button - Mobile Responsive */
+/* Rain Toggle Button - Mobile Responsive */
 @media (max-width: 768px) {
-	.snow-toggle {
+	.rain-toggle {
 		top: 12px;
 		right: 12px;
 		padding: 8px 12px;
@@ -247,7 +247,7 @@ body {
 }
 
 @media (max-width: 480px) {
-	.snow-toggle {
+	.rain-toggle {
 		top: 10px;
 		right: 10px;
 		padding: 6px 10px;
