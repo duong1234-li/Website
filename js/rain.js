@@ -1,5 +1,4 @@
 const rainContainer = document.querySelector('.rain-container');
-const rainToggle = document.getElementById('rain-toggle');
 
 if (!rainContainer) {
 	console.error('Rain container not found!');
@@ -10,13 +9,8 @@ if (!rainContainer) {
 	rainContainer.style.left = '0';
 }
 
-let rainEnabled = true;
-let rainInterval = null;
-
 // Function to create a single rain element
 function createRainElement() {
-	if (!rainEnabled) return;
-	
 	const rainElement = document.createElement('div');
 	rainElement.classList.add('raindrop'); // Use the CSS class for styling
 	
@@ -50,54 +44,10 @@ function createRainElement() {
 
 // Create rain elements continuously
 function startRain() {
-	// Create new rain elements more frequently for a heavier downpour
-	rainInterval = setInterval(createRainElement, 50);
-}
-
-// Stop creating rain
-function stopRain() {
-	if (rainInterval) {
-		clearInterval(rainInterval);
-		rainInterval = null;
-	}
-	// Clear existing elements
-	while (rainContainer.firstChild) {
-		rainContainer.removeChild(rainContainer.firstChild);
-	}
-}
-
-// Toggle rain on/off
-if (!rainToggle) {
-	console.error('Rain toggle button not found!');
-	// If the toggle doesn't exist, we can't add a listener to it.
-	// The rain will start by default and cannot be stopped.
-} else {
-rainToggle.addEventListener('click', () => {
-	rainEnabled = !rainEnabled;
-	
-	if (rainEnabled) {
-		rainToggle.textContent = 'Disable Rain';
-		rainToggle.classList.remove('disabled');
-		startRain();
-	} else {
-		rainToggle.textContent = 'Enable Rain';
-		rainToggle.classList.add('disabled');
-		stopRain();
-	}
-});
+	setInterval(createRainElement, 50);
 }
 
 // Start the rain effect immediately
 if (rainContainer) {
 	startRain();
 }
-
-// Handle window resize to ensure raindrops fall the correct distance
-window.addEventListener('resize', () => {
-	if (rainEnabled && rainContainer) {
-		// Stop and clear existing rain
-		stopRain();
-		// Restart with new window dimensions
-		startRain();
-	}
-});
