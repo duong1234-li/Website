@@ -42,9 +42,20 @@ function createRainElement() {
 	}, duration * 1000);
 }
 
-// Create rain elements continuously
+let lastTime = 0;
+const rainInterval = 50; // ms between raindrops
+
+function rainLoop(timestamp) {
+	if (timestamp - lastTime > rainInterval) {
+		createRainElement();
+		lastTime = timestamp;
+	}
+	requestAnimationFrame(rainLoop);
+}
+
+// Kicks off the animation loop
 function startRain() {
-	setInterval(createRainElement, 50);
+	requestAnimationFrame(rainLoop);
 }
 
 // Start the rain effect immediately
