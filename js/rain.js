@@ -44,18 +44,48 @@ function createRainElement() {
 
 let lastTime = 0;
 const rainInterval = 50; // ms between raindrops
+let rainLoopId = null;
+let isRaining = true;
 
 function rainLoop(timestamp) {
 	if (timestamp - lastTime > rainInterval) {
 		createRainElement();
 		lastTime = timestamp;
 	}
-	requestAnimationFrame(rainLoop);
+	rainLoopId = requestAnimationFrame(rainLoop);
 }
 
 // Kicks off the animation loop
 function startRain() {
-	requestAnimationFrame(rainLoop);
+	if (!rainLoopId) {
+		isRaining = true;
+		rainLoopId = requestAnimationFrame(rainLoop);
+		rainContainer.style.display = 'block';
+		document.getElementById('rain-toggle').textContent = 'Disable Rain';
+	}
+}
+
+// Stop the rain effect
+function stopRain() {
+	if (rainLoopId) {
+		cancelAnimationFrame(rainLoopId);
+		rainLoopId = null;
+		isRaining = false;
+		rainContainer.style.display = 'none';
+		document.getElementById('rain-toggle').textContent = 'Enable Rain';
+	}
+}
+
+// Toggle rain on button click
+const rainToggleBtn = document.getElementById('rain-toggle');
+if (rainToggleBtn) {
+	rainToggleBtn.addEventListener('click', () => {
+		if (isRaining) {
+			stopRain();
+		} else {
+			startRain();
+		}
+	});
 }
 
 // Start the rain effect immediately
